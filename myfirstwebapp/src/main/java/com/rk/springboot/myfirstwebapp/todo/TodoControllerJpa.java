@@ -3,6 +3,7 @@ package com.rk.springboot.myfirstwebapp.todo;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -17,11 +18,7 @@ import jakarta.validation.Valid;
 @Controller
 public class TodoControllerJpa {
 
-	public TodoControllerJpa(TodoRepository todoRepository) {
-		super();
-		this.todoRepository = todoRepository;
-	}
-
+	@Autowired
 	private TodoRepository todoRepository;
 
 	@RequestMapping("list-todos")
